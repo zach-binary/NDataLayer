@@ -35,9 +35,7 @@
         </footer>
     </div>
 
-    <script>
-        var digitalData = @{ Html.RenderAction("DataLayerJson"); };
-    </script>
+    @{ Html.RenderAction("DataLayerJson"); }
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

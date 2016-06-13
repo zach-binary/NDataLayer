@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Page : DataLayerObject
+    public class DataLayerPage : DataLayerObject
     {
         public PageInfo PageInfo { get; set; }
     }

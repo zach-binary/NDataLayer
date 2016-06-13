@@ -39,10 +39,10 @@ namespace NDataLayer.Tests
             dataLayer.Page.Attributes.Add("hello", "test");
             dataLayer.PageInstanceID = "test";
 
-            dataLayer.Products.Add(new Product());
-            dataLayer.Events.Add(new Event());
-            dataLayer.Components.Add(new Component());
-            dataLayer.Users.Add(new User());
+            dataLayer.Products.Add(new DataLayerProduct());
+            dataLayer.Events.Add(new DataLayerEvent());
+            dataLayer.Components.Add(new DataLayerComponent());
+            dataLayer.Users.Add(new DataLayerUser());
 
             dataLayer.Cart.CartID = "cartId";
             dataLayer.Cart.Price.BasePrice = 40.00;

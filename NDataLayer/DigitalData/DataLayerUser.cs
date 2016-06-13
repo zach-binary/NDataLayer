@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class User
+    public class DataLayerUser
     {
-        public User()
+        public DataLayerUser()
         {
             Segment = new Dictionary<string, object>();
         }

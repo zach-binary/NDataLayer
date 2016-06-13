@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Event : DataLayerObject
+    public class DataLayerEvent : DataLayerObject
     {
-        public Event()
+        public DataLayerEvent()
         {
             EventInfo = new EventInfo();
         }
@@ -20,7 +20,7 @@ namespace NDataLayer.DigitalData
     {
         public string EventName { get; set; }
         public string EventAction { get; set; }
-        public int EventPoints { get; set; }
+        public int? EventPoints { get; set; }
         public string Type { get; set; }
         public object TimeStamp { get; set; }
         public string Effect { get; set; }

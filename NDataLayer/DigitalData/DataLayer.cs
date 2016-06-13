@@ -9,48 +9,43 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class DataLayer
+    public partial class DataLayer
     {
         public DataLayer()
         {
-            Page = new Page() { PageInfo = new PageInfo() };
-            Products = new List<Product>();
-            Events = new List<Event>();
-            Components = new List<Component>();
-            Cart = new Cart();
-            Transaction = new Transaction();
-            Privacy = new Privacy();
-            Users = new List<User>();
+            Page = new DataLayerPage() { PageInfo = new PageInfo() };
+            Products = new List<DataLayerProduct>();
+            Events = new List<DataLayerEvent>();
+            Components = new List<DataLayerComponent>();
+            Cart = new DataLayerCart();
+            Transaction = new DataLayerTransaction();
+            Privacy = new DataLayerPrivacy();
+            Users = new List<DataLayerUser>();
         }
 
         public string PageInstanceID { get; set; }
-        public Page Page { get; set; }
+        public DataLayerPage Page { get; set; }
 
         [JsonProperty("product")]
-        public List<Product> Products { get; set; }
+        public List<DataLayerProduct> Products { get; set; }
 
-        public Cart Cart { get; set; }
-        public Transaction Transaction { get; set; }
+        public DataLayerCart Cart { get; set; }
+        public DataLayerTransaction Transaction { get; set; }
 
         [JsonProperty("event")]
-        public List<Event> Events { get; set; }
+        public List<DataLayerEvent> Events { get; set; }
 
         [JsonProperty("component")]
-        public List<Component> Components { get; set; }
+        public List<DataLayerComponent> Components { get; set; }
 
         [JsonProperty("user")]
-        public List<User> Users { get; set; }
+        public List<DataLayerUser> Users { get; set; }
 
-        public Privacy Privacy { get; set; }
+        public DataLayerPrivacy Privacy { get; set; }
 
         public string Version = "1.0";
 
         public Dictionary<string, object> Attributes { get; set; }
-
-        public bool ShouldSerializeProducts()
-        {
-            return Products.Any();
-        }
 
         public string ToJson(bool pretty = false)
         {

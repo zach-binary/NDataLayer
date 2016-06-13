@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DigitalData\Cart.cs" />
-    <Compile Include="DigitalData\Component.cs" />
+    <Compile Include="DigitalData\DataLayerCart.cs" />
+    <Compile Include="DigitalData\DataLayerComponent.cs" />
     <Compile Include="DigitalData\DataLayer.cs" />
-    <Compile Include="DigitalData\Event.cs" />
-    <Compile Include="DigitalData\Page.cs" />
-    <Compile Include="DigitalData\Privacy.cs" />
-    <Compile Include="DigitalData\Product.cs" />
+    <Compile Include="DigitalData\DataLayerJsonProps.cs" />
+    <Compile Include="DigitalData\DataLayerEvent.cs" />
+    <Compile Include="DigitalData\DataLayerPage.cs" />
+    <Compile Include="DigitalData\DataLayerPrivacy.cs" />
+    <Compile Include="DigitalData\DataLayerProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DigitalData\Security.cs" />
-    <Compile Include="DigitalData\Transaction.cs" />
-    <Compile Include="DigitalData\User.cs" />
+    <Compile Include="DigitalData\DataLayerTransaction.cs" />
+    <Compile Include="DigitalData\DataLayerUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

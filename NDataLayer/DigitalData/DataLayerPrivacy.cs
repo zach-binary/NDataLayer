@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Privacy
+    public class DataLayerPrivacy
     {
-        public Privacy()
+        public DataLayerPrivacy()
         {
             AccessCategories = new List<AccessCategory>();
         }

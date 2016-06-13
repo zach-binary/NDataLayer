@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Product : DataLayerObject
+    public class DataLayerProduct : DataLayerObject
     {
-        public Product() : base()
+        public DataLayerProduct() : base()
         {
-            LinkedProducts = new List<Product>();
+            LinkedProducts = new List<DataLayerProduct>();
         }
 
         public ProductInfo ProductInfo { get; set; }
 
         [JsonProperty("linkedProduct")]
-        public List<Product> LinkedProducts { get; set; }
+        public List<DataLayerProduct> LinkedProducts { get; set; }
 
         public bool ShouldSerializeLinkedProducts()
         {

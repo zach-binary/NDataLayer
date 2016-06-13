@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Cart : DataLayerObject
+    public class DataLayerCart : DataLayerObject
     {
-        public Cart() : base()
+        public DataLayerCart() : base()
         {
             Price = new CartPrice();
             Items = new List<CartItem>();
@@ -24,15 +24,15 @@ namespace NDataLayer.DigitalData
 
     public class CartPrice
     {
-        public double BasePrice { get; set; }
+        public double? BasePrice { get; set; }
         public string VoucherCode { get; set; }
-        public double VoucherDiscount { get; set; }
+        public double? VoucherDiscount { get; set; }
         public string Currency { get; set; }
-        public double TaxRate { get; set; }
-        public double Shipping { get; set; }
+        public double? TaxRate { get; set; }
+        public double? Shipping { get; set; }
         public string ShippingMethod { get; set; }
-        public double PriceWithTax { get; set; }
-        public double CartTotal { get; set; }
+        public double? PriceWithTax { get; set; }
+        public double? CartTotal { get; set; }
     }
 
     public class CartItem : DataLayerObject
@@ -40,14 +40,14 @@ namespace NDataLayer.DigitalData
         public CartItem() : base()
         {
             ProductInfo = new ProductInfo();
-            LinkedProducts = new List<Product>();
+            LinkedProducts = new List<DataLayerProduct>();
         }
 
         public ProductInfo ProductInfo { get; set; }
         public int Quantity { get; set; }
 
         [JsonProperty("linkedProduct")]
-        public List<Product> LinkedProducts { get; set; }
+        public List<DataLayerProduct> LinkedProducts { get; set; }
 
         public bool ShouldSerializeLinkedProducts()
         {

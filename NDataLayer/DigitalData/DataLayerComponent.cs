@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Component : DataLayerObject
+    public class DataLayerComponent : DataLayerObject
     {
         public ComponentInfo ComponentInfo { get; set; }
     }

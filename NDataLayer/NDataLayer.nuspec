@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>NDataLayer</id>
+    <version>0.0.1</version>
+    <title>NDataLayer</title>
+    <authors>Zach Burke</authors>
+    <owners>Zach Burke</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helps create a w3c compliant digital data object for use in cloud tag management tools like DTM</description>
+    <releaseNotes>First minor version, includes basic needs for create a digital data object in browser</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>dtm datalayer digitaldata</tags>
+  </metadata>
+</package>

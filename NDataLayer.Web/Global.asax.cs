@@ -1,4 +1,6 @@
-﻿using NDataLayer.DigitalData;
+﻿using LightInject;
+using NDataLayer.DigitalData;
+using NDataLayer.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,16 @@ namespace NDataLayer.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var container = new ServiceContainer();
+
+            container.EnablePerWebRequestScope();
+
+            container.RegisterControllers();
+            container.Register<DataLayer>(new PerScopeLifetime());
+            container.Register<ITestService, TestService>();
+
+            container.EnableMvc();
         }
 
         protected void Application_BeginRequest()

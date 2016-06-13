@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
-    public class Transaction : DataLayerObject
+    public class DataLayerTransaction : DataLayerObject
     {
-        public Transaction()
+        public DataLayerTransaction()
         {
             Profile = new Profile() { ProfileInfo = new ProfileInfo() };
             Total = new CartPrice();
