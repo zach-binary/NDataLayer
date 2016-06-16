@@ -22,5 +22,20 @@ namespace NDataLayer.DigitalData
 
         [JsonProperty("item")]
         public List<CartItem> Items { get; set; }
+
+        public bool ShouldSerializeItems()
+        {
+            return Items.Any();
+        }
+
+        public bool ShouldSerializeProfile()
+        {
+            return Profile.ShouldSerialize();
+        }
+
+        public bool ShouldSerializeTotal()
+        {
+            return Total.ShouldSerialize();
+        }
     }
 }

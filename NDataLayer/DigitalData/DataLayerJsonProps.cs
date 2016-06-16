@@ -28,5 +28,28 @@ namespace NDataLayer.DigitalData
         {
             return Users.Any();
         }
+
+        public bool ShouldSerializeCart()
+        {
+            return Cart.ShouldSerializeAttributes() ||
+                !string.IsNullOrEmpty(Cart.CartID) ||
+                Cart.ShouldSerializeCategory() ||
+                Cart.ShouldSerializeItems() ||
+                Cart.Price.ShouldSerialize();
+        }
+
+        public bool ShouldSerializeTransaction()
+        {
+            return Transaction.ShouldSerializeAttributes() ||
+                Transaction.ShouldSerializeCategory() ||
+                Transaction.ShouldSerializeItems() ||
+                Transaction.ShouldSerializeTotal() ||
+                Transaction.ShouldSerializeProfile();
+        }
+
+        public bool ShouldSerializePrivacy()
+        {
+            return Privacy.ShouldSerializeCategories();
+        }
     }
 }

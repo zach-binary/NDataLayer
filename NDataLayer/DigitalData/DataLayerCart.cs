@@ -20,6 +20,11 @@ namespace NDataLayer.DigitalData
 
         [JsonProperty("item")]
         public List<CartItem> Items { get; set; }
+
+        public bool ShouldSerializeItems()
+        {
+            return Items.Any();
+        }
     }
 
     public class CartPrice
@@ -33,6 +38,19 @@ namespace NDataLayer.DigitalData
         public string ShippingMethod { get; set; }
         public double? PriceWithTax { get; set; }
         public double? CartTotal { get; set; }
+
+        public bool ShouldSerialize()
+        {
+            return BasePrice != null ||
+                !string.IsNullOrEmpty(VoucherCode) ||
+                VoucherDiscount != null ||
+                !string.IsNullOrEmpty(Currency) ||
+                TaxRate != null ||
+                Shipping != null ||
+                !string.IsNullOrEmpty(ShippingMethod) ||
+                PriceWithTax != null ||
+                CartTotal != null;
+        }
     }
 
     public class CartItem : DataLayerObject

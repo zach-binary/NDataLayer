@@ -15,6 +15,11 @@ namespace NDataLayer.DigitalData
         }
 
         public List<AccessCategory> AccessCategories { get; set; }
+
+        public bool ShouldSerializeCategories()
+        {
+            return AccessCategories.Any();
+        }
     }
 
     public class AccessCategory

@@ -59,5 +59,28 @@ namespace NDataLayer.Tests
 
             // if this doesn't throw a null ref exception, it passes
         }
+
+        [TestMethod]
+        public void DataLayer_EmptyPropsAreNotSerialized()
+        {
+            var dataLayer = new DataLayer();
+
+            var json = JsonConvert.DeserializeObject<JObject>(dataLayer.ToJson());
+
+            Assert.IsNull(json["privacy"]);
+            Assert.IsNull(json["cart"]);
+            Assert.IsNull(json["transaction"]);
+            // Assert.IsNull(json["page"]); // ignoring page for now, I think that's likely always going to be populated
+            Assert.IsNull(json["user"]);
+            Assert.IsNull(json["product"]);
+            Assert.IsNull(json["event"]);
+            Assert.IsNull(json["component"]);
+
+            dataLayer.Cart.CartID = "test";
+            json = JsonConvert.DeserializeObject<JObject>(dataLayer.ToJson());
+
+            Assert.IsNotNull(json["cart"]);
+            Assert.AreEqual(json["cart"]["cartID"], "test");
+        }
     }
 }
