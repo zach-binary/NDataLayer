@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>NDataLayer</id>
+        <version>0.0.2</version>
+        <title>NDataLayer</title>
+        <authors>Zach Burke</authors>
+        <owners>Zach Burke</owners>
+        <projectUrl>https://github.com/zach-binary/NDataLayer</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Helps create a w3c compliant digital data object for use in cloud tag management tools like adobe DTM</description>
+        <releaseNotes>no longer showing properties if they are empty objects</releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>dtm datalayer digitaldata</tags>
+        <dependencies>
+            <dependency id="Newtonsoft.Json" version="8.0.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\NDataLayer.dll" target="lib\net\NDataLayer.dll" />
+        <file src="bin\Release\NDataLayer.pdb" target="lib\net\NDataLayer.pdb" />
+    </files>
+</package>
