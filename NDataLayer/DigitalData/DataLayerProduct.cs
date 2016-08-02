@@ -12,6 +12,7 @@ namespace NDataLayer.DigitalData
         public DataLayerProduct() : base()
         {
             LinkedProducts = new List<DataLayerProduct>();
+            ProductInfo = new ProductInfo();
         }
 
         public ProductInfo ProductInfo { get; set; }
