@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace NDataLayer.DigitalData
 {
@@ -27,18 +24,22 @@ namespace NDataLayer.DigitalData
         public DataLayerPage Page { get; set; }
 
         [JsonProperty("product")]
+        [DataMember(Name = "product")]
         public List<DataLayerProduct> Products { get; set; }
 
         public DataLayerCart Cart { get; set; }
         public DataLayerTransaction Transaction { get; set; }
 
         [JsonProperty("event")]
+        [DataMember(Name = "event")]
         public List<DataLayerEvent> Events { get; set; }
 
         [JsonProperty("component")]
+        [DataMember(Name = "component")]
         public List<DataLayerComponent> Components { get; set; }
 
         [JsonProperty("user")]
+        [DataMember(Name = "user")]
         public List<DataLayerUser> Users { get; set; }
 
         public DataLayerPrivacy Privacy { get; set; }

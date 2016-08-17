@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NDataLayer.DigitalData
 {
@@ -62,8 +60,8 @@ namespace NDataLayer.DigitalData
         public bool ShouldSerialize()
         {
             return this.GetType().GetProperties()
-                .Where(pi => pi.GetValue(this) is string)
-                .Select(pi => (string)pi.GetValue(this))
+                .Where(pi => pi.GetValue(this, null) is string)
+                .Select(pi => (string)pi.GetValue(this, null))
                 .Any(value => !String.IsNullOrEmpty(value));
         }
     }
@@ -80,8 +78,8 @@ namespace NDataLayer.DigitalData
         public bool ShouldSerialize()
         {
             return this.GetType().GetProperties()
-                .Where(pi => pi.GetValue(this) is string)
-                .Select(pi => (string)pi.GetValue(this))
+                .Where(pi => pi.GetValue(this, null) is string)
+                .Select(pi => (string)pi.GetValue(this, null))
                 .Any(value => !String.IsNullOrEmpty(value));
         }
     }
@@ -96,8 +94,8 @@ namespace NDataLayer.DigitalData
         public bool ShouldSerialize()
         {
             return this.GetType().GetProperties()
-                .Where(pi => pi.GetValue(this) is string)
-                .Select(pi => (string)pi.GetValue(this))
+                .Where(pi => pi.GetValue(this, null) is string)
+                .Select(pi => (string)pi.GetValue(this, null))
                 .Any(value => !String.IsNullOrEmpty(value));
         }
     }
